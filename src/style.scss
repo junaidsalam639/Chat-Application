@@ -88,14 +88,15 @@
 }
 
 .home {
-  background-color: #a7bcff;
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  background-image: url('https://i.pinimg.com/originals/e8/d9/4e/e8d94e1e8b6b530ad315e9385290141b.jpg');
+  background-position: center;
+  background-size: contain;
 
   .container {
-    border: 1px solid white;
     border-radius: 10px;
     width: 65%;
     height: 80%;
@@ -107,17 +108,21 @@
 
     .sidebar {
       flex: 1;
-      background-color: #3e3c61;
       position: relative;
+      background-image: url('https://i.pinimg.com/originals/e8/d9/4e/e8d94e1e8b6b530ad315e9385290141b.jpg');
+      background-position: center;
+      background-size: contain;
 
       .navbar {
         display: flex;
         align-items: center;
-        background-color: #2f2d52;
         height: 50px;
         padding: 10px;
         justify-content: space-between;
         color: #ddddf7;
+        background-image: url('https://i.pinimg.com/originals/e8/d9/4e/e8d94e1e8b6b530ad315e9385290141b.jpg');
+        background-position: center;
+        background-size: contain;
 
         .logo {
           font-weight: bold;
@@ -140,10 +145,10 @@
           }
 
           button {
-            background-color: #5d5b8d;
+            background-color: #8da4f1;
             color: #ddddf7;
             font-size: 14px;
-            padding: 5px 10px;
+            padding: 6px 14px;
             border: none;
             cursor: pointer;
             @include tablet {
@@ -181,7 +186,8 @@
         cursor: pointer;
 
         &:hover {
-          background-color: #2f2d52;
+        filter: contrast(200%);
+        filter: blur(1px);
         }
 
         img {
@@ -208,12 +214,14 @@
 
       .chatInfo {
         height: 50px;
-        background-color: #5d5b8d;
         display: flex;
         align-items: center;
         justify-content: space-between;
         padding: 10px;
         color: lightgray;
+        background-image: url('https://i.pinimg.com/originals/e8/d9/4e/e8d94e1e8b6b530ad315e9385290141b.jpg');
+        background-position: center;
+        background-size: contain;
       }
 
       .chatIcons {
@@ -230,8 +238,10 @@
         background-color: #ddddf7;
         padding: 10px;
         height: calc(100% - 160px);
-        overflow: scroll;
-
+        overflow-y: scroll;
+        background-image: url('https://cdn.wallpapersafari.com/54/0/HluF7g.jpg');
+        background-position: center;
+        background-size: contain;
         .message {
           display: flex;
           gap: 20px;

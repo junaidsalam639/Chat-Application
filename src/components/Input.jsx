@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import Img from "../img/img.png";
-import Attach from "../img/attach.png";
+import newPng from "../img/new.png"
 import { AuthContext } from "../context/AuthContext";
 import { ChatContext } from "../context/ChatContext";
 import {
@@ -93,7 +93,7 @@ const Input = () => {
         value={text}
       />
       <div className="send">
-        <img src={Attach} alt="" onClick={handleEmojiButtonClick} />
+        <img src={newPng} alt="" onClick={handleEmojiButtonClick} />
         {showPicker && (
         <EmojiPicker disableSearchBar onEmojiClick={onEmojiClick} width={400} height={600} />
       )}
