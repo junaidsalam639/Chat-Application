@@ -12,12 +12,7 @@ const Message = ({ message }) => {
     ref.current?.scrollIntoView({ behavior: "smooth" });
   }, [message]);
 
-  const date = new Date();
-  const dates = date.toLocaleString().slice(11, 23);
-  const secondOut = dates.slice(0, 6);
-  const pmOut = dates.slice(9, 13);
-  const concat = secondOut + " " + pmOut;
-  console.log(concat);
+
 
   return (
     <div
@@ -43,7 +38,7 @@ const Message = ({ message }) => {
             fontWeight: "600",
           }}
         >
-          {concat}
+          {message.date[1]}
         </span>
       </div>
       <div className="messageContent">

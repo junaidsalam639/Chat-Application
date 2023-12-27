@@ -32,6 +32,12 @@ const Input = () => {
   const { currentUser } = useContext(AuthContext);
   const { data } = useContext(ChatContext);
 
+  const date = new Date();
+  const dates = date.toLocaleString().slice(11, 23);
+  const secondOut = dates.slice(0, 6);
+  const pmOut = dates.slice(9, 13);
+  const concat = secondOut + " " + pmOut;
+
   const handleSend = async () => {
     if (img) {
       const storageRef = ref(storage, uuid());
@@ -49,7 +55,7 @@ const Input = () => {
                 id: uuid(),
                 text,
                 senderId: currentUser.uid,
-                date: Timestamp.now(),
+                date: [Timestamp.now() , concat],
                 img: downloadURL,
               }),
             });
@@ -62,7 +68,7 @@ const Input = () => {
           id: uuid(),
           text,
           senderId: currentUser.uid,
-          date: Timestamp.now(),
+          date: [Timestamp.now() , concat],
         }),
       });
     }
@@ -95,7 +101,7 @@ const Input = () => {
       <div className="send">
         <img src={newPng} alt="" onClick={handleEmojiButtonClick} />
         {showPicker && (
-        <EmojiPicker disableSearchBar onEmojiClick={onEmojiClick} width={400} height={600} />
+        <EmojiPicker disableSearchBar onEmojiClick={onEmojiClick} width='100%' height={600} />
       )}
 
         <input
