@@ -95,7 +95,7 @@ const Input = () => {
       <div className="send">
         <img src={Attach} alt="" onClick={handleEmojiButtonClick} />
         {showPicker && (
-        <EmojiPicker disableSearchBar onEmojiClick={onEmojiClick} width={400}  />
+        <EmojiPicker disableSearchBar onEmojiClick={onEmojiClick} width={400} height={600} />
       )}
 
         <input
