@@ -3,11 +3,19 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import "./style.scss";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import { useContext } from "react";
+import { useContext  } from "react";
 import { AuthContext } from "./context/AuthContext";
+// import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition';
 
 function App() {
   const { currentUser } = useContext(AuthContext);
+  
+  // const { transcript, browserSupportsSpeechRecognition } = useSpeechRecognition();
+  // const startListening = () => SpeechRecognition.startListening({ continuous: true , language : 'en-IN' });
+  // if (!browserSupportsSpeechRecognition) {
+  //   return null
+  // }
+
   const ProtectedRoute = ({ children }) => {
     if (!currentUser) {
       return <Navigate to="/login" />;
@@ -15,7 +23,9 @@ function App() {
     return children
   };
 
+
   return (
+    <>
     <BrowserRouter>
       <Routes>
         <Route path="/">
@@ -32,6 +42,10 @@ function App() {
         </Route>
       </Routes>
     </BrowserRouter>
+     {/* <p>{transcript}</p>
+     <button onClick={startListening}>Start</button>
+     <button onClick={SpeechRecognition.stopListening}>Off</button> */}
+    </>
   );
 }
 
