@@ -12,6 +12,13 @@ const Message = ({ message }) => {
     ref.current?.scrollIntoView({ behavior: "smooth" });
   }, [message]);
 
+  const date = new Date();
+  const dates = date.toLocaleString().slice(11, 23);
+  const secondOut = dates.slice(0, 6);
+  const pmOut = dates.slice(10, 12);
+  const concat = secondOut + " " + pmOut;
+  console.log(concat);
+
   return (
     <div
       ref={ref}
@@ -26,10 +33,21 @@ const Message = ({ message }) => {
           }
           alt=""
         />
-        <span>just now</span>
+        <span
+          style={{
+            fontSize: "11px",
+            marginTop: "10px",
+            backgroundColor: "white",
+            padding: "2px",
+            borderRadius: "2px",
+            fontWeight: "600",
+          }}
+        >
+          {concat}
+        </span>
       </div>
       <div className="messageContent">
-        <p>{message.text}</p>
+        {message.text && <p>{message.text}</p>}
         {message.img && <img src={message.img} alt="" />}
       </div>
     </div>
